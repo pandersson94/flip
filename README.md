@@ -138,4 +138,4 @@ Should your work use the FLIP tool in a more general fashion, please cite the Ra
 
 # Acknowledgements
 We appreciate the following peoples' contributions to this repository:
-Jonathan Granskog, Jacob Munkberg, Jon Hasselgren, Jefferson Amstutz, Alan Wolfe, Killian Herveau, Vinh Truong, Philippe Dagobert, Hannes Hergeth, Matt Pharr, Tizian Zeltner, Jan Honsbrok, Chris Zhang, Wenzel Jakob, and Julian Amann.
+Jonathan Granskog, Jacob Munkberg, Jon Hasselgren, Jefferson Amstutz, Alan Wolfe, Killian Herveau, Vinh Truong, Philippe Dagobert, Hannes Hergeth, Matt Pharr, Tizian Zeltner, Jan Honsbrok, Chris Zhang, Wenzel Jakob, Julian Amann, and Xijie Yang.
