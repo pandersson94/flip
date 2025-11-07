@@ -35,7 +35,7 @@ different metrics.
 
 # License
 
-Copyright © 2020-2024, NVIDIA Corporation & Affiliates. All rights reserved.
+Copyright © 2020-2025, NVIDIA Corporation & Affiliates. All rights reserved.
 
 This work is made available under a [BSD 3-Clause License](LICENSE).
 
@@ -81,9 +81,10 @@ The `src/cpp/FLIP.sln` solution contains one CUDA backend project and one pure C
 
 Compiling the CUDA project requires a CUDA compatible GPU. Instruction on how to install CUDA can be found [here](https://docs.nvidia.com/cuda/cuda-installation-guide-microsoft-windows/index.html).
 
-Alternatively, a CMake build can be done by creating a build directory and invoking CMake on the source dir (add `--config Release` to build release configuration on Windows):
+Alternatively, a CMake build can be done by creating a build directory in the `src` directory and invoking CMake on the source `cpp` directory (add `--config Release` to build release configuration on Windows):
 
 ```
+cd src
 mkdir build
 cd build
 cmake ..
@@ -137,4 +138,4 @@ Should your work use the FLIP tool in a more general fashion, please cite the Ra
 
 # Acknowledgements
 We appreciate the following peoples' contributions to this repository:
-Jonathan Granskog, Jacob Munkberg, Jon Hasselgren, Jefferson Amstutz, Alan Wolfe, Killian Herveau, Vinh Truong, Philippe Dagobert, Hannes Hergeth, Matt Pharr, Tizian Zeltner, Jan Honsbrok, Chris Zhang, and Wenzel Jakob.
+Jonathan Granskog, Jacob Munkberg, Jon Hasselgren, Jefferson Amstutz, Alan Wolfe, Killian Herveau, Vinh Truong, Philippe Dagobert, Hannes Hergeth, Matt Pharr, Tizian Zeltner, Jan Honsbrok, Chris Zhang, Wenzel Jakob, and Julian Amann.

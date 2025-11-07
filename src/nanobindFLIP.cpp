@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020-2024, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+ * Copyright (c) 2020-2025, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
@@ -26,7 +26,7 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
- * SPDX-FileCopyrightText: Copyright (c) 2020-2024 NVIDIA CORPORATION & AFFILIATES
+ * SPDX-FileCopyrightText: Copyright (c) 2020-2025 NVIDIA CORPORATION & AFFILIATES
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
@@ -79,7 +79,7 @@ Array3D load(std::string fileName)
     bool imageOk = ImageHelpers::load(image, fileName);
     if (!imageOk)
     {
-        std::cout << "Error: could not read image file <" << fileName << ">. Exiting\n";
+        std::cout << "Error: could not read image file <" << fileName << ">. Note that FLIP only loads png, bmp, tga, and exr images. Exiting.\n";
         exit(EXIT_FAILURE);
     }
 
@@ -273,7 +273,7 @@ int execute(const nb::list argvPy)
 }
 
 // Setup the pybind11 module.
-NB_MODULE(pbflip, handle)
+NB_MODULE(nbflip, handle)
 {
     handle.doc() = "Load images (load), evaluate FLIP (evaluate), or run the full FLIP tool (execute).";
     handle.def("load", &load);

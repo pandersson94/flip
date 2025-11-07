@@ -1,5 +1,5 @@
 #################################################################################
-# Copyright (c) 2020-2024, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# Copyright (c) 2020-2025, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -26,10 +26,55 @@
 # OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-# SPDX-FileCopyrightText: Copyright (c) 2020-2024 NVIDIA CORPORATION & AFFILIATES
+# SPDX-FileCopyrightText: Copyright (c) 2020-2025 NVIDIA CORPORATION & AFFILIATES
 # SPDX-License-Identifier: BSD-3-Clause
 #################################################################################
 
+<<<<<<<< HEAD:pyproject.toml
+[build-system]
+requires = ["scikit-build-core >=0.4.3", "nanobind >=1.3.2"]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "flip_evaluator"
+version = "1.7"
+description = "A Difference Evaluator for Alternating Images"
+readme = "README.md"
+requires-python = ">=3.8"
+authors = [
+    { name = "Pontus Ebelin" },
+    { name = "Tomas Akenine-Möller" }
+]
+classifiers = [
+    "License :: OSI Approved :: BSD License"
+]
+
+[project.scripts]
+flip = "flip_evaluator.flip_python_api:main"
+
+[project.urls]
+Homepage = "https://github.com/nvlabs/flip"
+
+[tool.cibuildwheel]
+build-verbosity = 1
+build = ["cp38-*", "cp39-*", "cp310-*", "cp311-*", "cp312-*", "cp313-*"]
+test-command = ["flip -h"]
+
+[tool.cibuildwheel.macos.environment]
+MACOSX_DEPLOYMENT_TARGET = "10.15"
+
+[tool.scikit-build]
+minimum-version = "0.4"
+sdist.include = ["src/flip_evaluator/__init__.py", "src/flip_evaluator/flip_python_api.py", "src/cpp/FLIP.h", "src/cpp/tool/*.h"]
+sdist.exclude = [".github", ".gitignore", "images", "misc", "dist", "*__pycache__*", "src/pytorch", "src/cmake", "src/tests", "src/CMakeLists.txt", "src/python", "src/cpp/FLIP.sln", "src/cpp/CMakeLists.txt", "src/cpp/README.md", "src/cpp/tool/CMakeLists.txt", "src/cpp/tool/CPP.vcxproj*", "src/cpp/tool/CUDA.vcxproj*", "src/cpp/tool/*.cpp", "src/cpp/tool/*.cu"]
+
+[tool.hatch.metadata.hooks.fancy-pypi-readme]
+content-type = "text/markdown"
+
+build-dir = "build/{wheel_tag}"
+
+wheel.py-api = "cp312"
+========
 cmake_minimum_required(VERSION 3.9)
 
 set(CMAKE_DISABLE_SOURCE_CHANGES ON)
@@ -49,3 +94,4 @@ include(GNUInstallDirs)
 option(FLIP_ENABLE_CUDA "Include CUDA version of flip" OFF)
 
 add_subdirectory(cpp)
+>>>>>>>> upstream/main:src/CMakeLists.txt

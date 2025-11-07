@@ -1,6 +1,8 @@
 # List of papers/code that are using/citing FLIP
 
-Please let us know if you know of more papers that use/cite FLIP.
+**Note that we stopped updating this list after 160+ papers that used FLIP and 35 papers citing FLIP (but not using).**
+Now, we instead refer the the citation count on [Google Scholar](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Ch4LHOgAAAAJ&citation_for_view=Ch4LHOgAAAAJ:kz9GbA2Ns4gC).
+
 
 **Using FLIP:**
 1. Jae-Ho Nah, ["QuickETC2: Fast ETC2 texture compression using Luma differences"](https://dl.acm.org/doi/abs/10.1145/3414685.3417787), *ACM Transactions on Graphics (SIGGRAPH Asia)*, November 2020 Article No. 270
@@ -320,6 +322,19 @@ Distant Lighting of Heterogeneous Translucent Objects"](https://people.compute.d
  
 1. Chenliang Zhou, Alejandro Sztrajman, Gilles Rainer, Fangcheng Zhong, Fazilet Gokbudak, Zhilin Guo, Weihao Xia, Rafal Mantiuk, and Cengiz Oztireli, ["Physically Based Neural Bidirectional Reflectance Distribution Function"](https://arxiv.org/abs/2411.02347), arXiv:2411.02347, Nov 2024.
 
+1. Ahmet H. Güzel, Jeanne Beyazian, Praneeth Chakravarthula, and Kaan Akșit, ["ChromaCorrect: prescription correction in virtual reality headsets through perceptual guidance"](https://opg.optica.org/boe/fulltext.cfm?uri=boe-14-5-2166&id=529310), Biomedical Optics Express Vol. 14, Issue 5, pp. 2166-2180, 2023.
+
+1. Tove Börjeson and Filip Vannfält, ["Neural compression and decompression of textures in real-time rendering"](https://lup.lub.lu.se/luur/download?func=downloadFile&recordOId=9177827&fileOId=9177828), MSc thesis, Department of Compute Science, Lund University, November 2024.
+
+1.  Julius Ikkala, Tuomas Lauttia, Pekka Jääskeläinen, Markku Mäkitalo, ["k-DOP Clipping: Robust Ghosting Mitigation in Temporal Antialiasing"](https://dl.acm.org/doi/full/10.1145/3681758.3697996), SIGGRAPH Asia Technical Communications, November 2024.
+
+1. Huiwen Chen and Chunyi Chen, ["Light culling based on the limitations of human visual perception"](https://iopscience.iop.org/article/10.1088/1742-6596/2898/1/012022/pdf), Journal of Physics, 2024.
+
+1. Nicolai Hermann, Jorge Condor, Piotr Didyk, ["Puzzle Similarity: A Perceptually-guided No-Reference Metric for Artifact Detection in 3D Scene Reconstructions"](https://arxiv.org/abs/2411.17489), arXiv:2411.17489, November 2024.
+
+1. Alina Pranovich Morten Rieger Hannemose,Janus Nørtoft Jensen, Duc Minh Tran,Henrik Aanæs,Sasan Gooran,Daniel Nyström and Jeppe Revall Frisvad, ["Digitizing the Appearance of 3D Printing Materials Using a Spectrophotometer"](https://www.mdpi.com/1424-8220/24/21/7025), Sensors 2024, 24(21), 2024.
+
+
 
 
 
@@ -391,6 +406,10 @@ ACM Transactions on Graphics (Proceedings of SIGGRAPH ASIA), 2021.
 1.  Shu-Ho Fan, Kai-Wen Hsiao, Kai Yi Tan, Chih-Yuan Yao, Hung-Kuo Chu, ["Aliasing Detection in Rendered Images via a Multi-Task Learning"](https://dl.acm.org/doi/abs/10.1145/3675379), Proceedings of the ACM on Computer Graphics and Interactive Techniques, Volume 7, Issue 3 Article No.: 41, 2024.
 
 1. Rafail Nikou, Aristeidis Tsaknis, Paschalis Margaritis, Stylianos Alvanos, Konstantinos-Filippos Kollias, George S. Maraslidis, Nikolaos Asimopoulos, Panagiotis Sarigiannidis, Vasileios Argyriou, George F. Fragulis, ["Machine learning data-based approaches for autism spectrum disorder classification utilising facial images"](https://pubs.aip.org/aip/acp/article-abstract/3220/1/050013/3315891/Machine-learning-data-based-approaches-for-autism), AIP Conference Proceedings, October 2024.
+
+1. Rafał Piórkowski1, Radosław Mantiuk, and Marek Wernikowski, ["Learning to predict perceptual visibility of rendering deterioration in computer games"](https://www.nature.com/articles/s41598-024-78254-0), Scientific Reports volume 14, 2024.
+
+1. Georg Kohl, ["Similarity Metrics for Numerical Simulations using Deep Learning"], PhD Thesis, TUM, 2024.
 
 
 **Code/frameworks/tools that use FLIP:**

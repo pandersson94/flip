@@ -1,5 +1,5 @@
 #################################################################################
-# Copyright (c) 2020-2024, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+# Copyright (c) 2020-2025, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -26,7 +26,7 @@
 # OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-# SPDX-FileCopyrightText: Copyright (c) 2020-2024 NVIDIA CORPORATION & AFFILIATES
+# SPDX-FileCopyrightText: Copyright (c) 2020-2025 NVIDIA CORPORATION & AFFILIATES
 # SPDX-License-Identifier: BSD-3-Clause
 #################################################################################
 
@@ -84,6 +84,6 @@ execute_process(
   OUTPUT_STRIP_TRAILING_WHITESPACE OUTPUT_VARIABLE nanobind_ROOT)
 find_package(nanobind CONFIG REQUIRED)
 
-nanobind_add_module(pbflip STABLE_ABI src/nanobindFLIP.cpp)
+nanobind_add_module(nbflip STABLE_ABI src/nanobindFLIP.cpp)
 
-install(TARGETS pbflip LIBRARY DESTINATION flip_evaluator)
+install(TARGETS nbflip LIBRARY DESTINATION flip_evaluator)

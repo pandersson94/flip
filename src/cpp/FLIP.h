@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020-2024, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+ * Copyright (c) 2020-2025, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
@@ -26,7 +26,7 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
- * SPDX-FileCopyrightText: Copyright (c) 2020-2024 NVIDIA CORPORATION & AFFILIATES
+ * SPDX-FileCopyrightText: Copyright (c) 2020-2025 NVIDIA CORPORATION & AFFILIATES
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
@@ -84,7 +84,6 @@
 #include <sstream>
 #include <fstream>
 #include <limits>
-#include "tool/pooling.h"
 
 #ifdef FLIP_ENABLE_CUDA
 #include "cuda_runtime.h"
@@ -2461,15 +2460,15 @@ namespace FLIP
     // Compute mean FLIP error, if desired.
     if (computeMeanFLIPError)
     {
-        FLIPPooling::pooling<float> pooledValues;
+        float sum = 0.0f;
         for (int y = 0; y < errorMapFLIPOutputImage.getHeight(); y++)
         {
             for (int x = 0; x < errorMapFLIPOutputImage.getWidth(); x++)
             {
-                pooledValues.update(x, y, errorMapFLIPOutputImage.get(x, y));
+                sum += errorMapFLIPOutputImage.get(x, y);
             }
         }
-        meanFLIPError = pooledValues.getMean();
+        meanFLIPError = sum / (errorMapFLIPOutputImage.getWidth() * errorMapFLIPOutputImage.getHeight());
     }
 
         if (applyMagmaMapToOutput)
