@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (c) 2020-2024, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+ * Copyright (c) 2020-2025, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
@@ -26,7 +26,7 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
- * SPDX-FileCopyrightText: Copyright (c) 2020-2024 NVIDIA CORPORATION & AFFILIATES
+ * SPDX-FileCopyrightText: Copyright (c) 2020-2025 NVIDIA CORPORATION & AFFILIATES
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
@@ -490,17 +490,17 @@ namespace FLIPTool
         }
         if (!commandLine.optionSet("reference"))
         {
-            std::cout << "Error: you need to set a reference image filename.\n  Typically done with '-r refimg.{png,exr}' or '--reference refimg.{png,exr}'.\n  Use -h or --help for help message. Exiting\n";
+            std::cout << "Error: you need to set a reference image filename.\n  Typically done with '-r refimg.{png,exr}' or '--reference refimg.{png,exr}'.\n  Use -h or --help for help message. Exiting.\n";
             exit(EXIT_FAILURE);
         }
         if (!std::filesystem::exists(commandLine.getOptionValue("reference")))  // Reference does not exist?
         {
-            std::cout << "Error: reference file <" << commandLine.getOptionValue("reference") << "> does not exist. Exiting\n";
+            std::cout << "Error: reference file <" << commandLine.getOptionValue("reference") << "> does not exist. Exiting.\n";
             exit(EXIT_FAILURE);
         } 
         if (!commandLine.optionSet("test"))
         {
-            std::cout << "Error: you need to set a test image filename.\n  Typically done with '-t testimg.{png,exr}' or '--test testimg.{png,exr}'.\n  Use -h or --help for help message. Exiting\n";
+            std::cout << "Error: you need to set a test image filename.\n  Typically done with '-t testimg.{png,exr}' or '--test testimg.{png,exr}'.\n  Use -h or --help for help message. Exiting.\n";
             exit(EXIT_FAILURE);
         }
         if ((commandLine.optionSet("basename") && commandLine.getOptionValues("test").size() != 1) || commandLine.getError())
@@ -543,7 +543,7 @@ namespace FLIPTool
         bool refImageOk = ImageHelpers::load(referenceImage, referenceFileName.toString());   // Load reference image.
         if (!refImageOk)
         {
-            std::cout << "Error: could not read reference image file <" << referenceFileName.toString() << ">. Exiting\n";
+            std::cout << "Error: could not read reference image file <" << referenceFileName.toString() << ">. Note that FLIP only loads png, bmp, tga, and exr images. Exiting.\n";
             exit(EXIT_FAILURE);
         }
 
@@ -569,7 +569,7 @@ namespace FLIPTool
 
             if (!std::filesystem::exists(testFileName.toString()))
             {
-                std::cout << "Error: test image file <" << testFileName.toString() << "> does not exist. Exiting\n";
+                std::cout << "Error: test image file <" << testFileName.toString() << "> does not exist. Exiting.\n";
                 exit(EXIT_FAILURE);
             }
             
@@ -577,12 +577,12 @@ namespace FLIPTool
             bool testImageOk = ImageHelpers::load(testImage, testFileName.toString());     // Load test image.
             if (!testImageOk)
             {
-                std::cout << "Error: could not read test file <" << testFileName.toString() << ">. Exiting\n";
+                std::cout << "Error: could not read test file <" << testFileName.toString() << ">. Note that FLIP only loads png, bmp, tga, and exr images. Exiting.\n";
                 exit(EXIT_FAILURE);
             }
             if (referenceImage.getWidth() != testImage.getWidth() || referenceImage.getHeight() != testImage.getHeight())
             {
-                std::cout << "Error: reference <" << referenceImage.getWidth() << "x" << referenceImage.getHeight() << "> and test <" << testImage.getWidth() << "x" << testImage.getHeight() << "> images must be of equal dimensions. Exiting\n";
+                std::cout << "Error: reference <" << referenceImage.getWidth() << "x" << referenceImage.getHeight() << "> and test <" << testImage.getWidth() << "x" << testImage.getHeight() << "> images must be of equal dimensions. Exiting.\n";
                 exit(EXIT_FAILURE);
             }
 
